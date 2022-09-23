@@ -83,6 +83,29 @@ body {
   background-color: var(--white-color);
 }
 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 4%;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.section.no-top-padding {
+  padding-top: 0;
+}
+
+/* -------------------------------HEADER------------------------------- */
+
 /* Загальні стилі для лого */
 .logo {
   font-family: var(--second-font-family);
@@ -91,27 +114,31 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--accent-color);
+  margin-right: 93px;
 }
-
-.container {
-  width: 1200px;
-  margin: 0 auto;
-  padding-right: 15px;
-  padding-left: 15px;
-  outline: 1px solid tomato;
-}
-
-.btn {
-  border: 0;
-  border-radius: 4%;
-}
-
-/* -------------------------------HEADER------------------------------- */
 
 .header {
   padding-top: 24px;
   padding-bottom: 25px;
   border-bottom: 1px solid #ececec;
+}
+
+.header-nav {
+  display: flex;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+}
+.header-list {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.header-contact-list {
+  display: flex;
+  margin-left: auto;
+  gap: 50px;
 }
 
 .header .logo span {
@@ -147,7 +174,7 @@ body {
   margin-top: 20px;
 }
 
-.footer-item:not(last-child) {
+.footer-item:not(:last-child) {
   margin-bottom: 9px;
 }
 
@@ -179,30 +206,32 @@ body {
   padding-bottom: 200px;
 }
 
-.top-section .top-title {
+.top-title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--white-color);
   width: 696px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .top-btn {
   background: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
   color: var(--white-color);
   font-weight: var(--second-font-weight);
   font-size: 16px;
   line-height: 1.87;
+  min-width: 216px;
+  height: 50px;
   display: flex;
-  align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
-  margin-top: 30px;
+  padding: 10px 32px;
+  align-items: center;
 }
 
 .top-btn:focus,
@@ -212,9 +241,9 @@ body {
 
 /* ----------------------------------section features------------------------------- */
 
-.features {
-  padding-top: 94px;
-  padding-bottom: 94px;
+.features-list {
+  display: flex;
+  gap: 30px;
 }
 
 .features-title {
@@ -235,12 +264,8 @@ body {
 
 /* ----------------------------------section direction------------------------------- */
 
-.direction {
-  padding-bottom: 94px;
-}
-
 /* Стилі для головних заголовків в секції direction та team */
-.sections-title-main-page {
+.sections-title {
   font-weight: var(--second-font-weight);
   font-size: 36px;
   line-height: 1.16;
@@ -250,16 +275,20 @@ body {
   margin-bottom: 50px;
 }
 
+.direction-list {
+  display: flex;
+  gap: 30px;
+}
+
 /* ----------------------------------section team------------------------------- */
 
 .team {
   background-color: var(--another-background-color);
-  padding-top: 94px;
-  padding-bottom: 94px;
 }
 
-.sections-title-main-page {
-  margin-bottom: 50px;
+.team-list {
+  display: flex;
+  gap: 30px;
 }
 
 .team-contant {
@@ -291,18 +320,20 @@ body {
 
 /* -------------------------------MAIN PORTFOLIO------------------------------- */
 
-.portfolio {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
 .btn-list {
   margin-bottom: 34px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
 }
 
 .portfolio-contant {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.portfolio-btn.first {
+  padding: 6px 25px;
 }
 
 .portfolio-btn {
@@ -314,12 +345,28 @@ body {
   line-height: 1.6;
   text-align: center;
   letter-spacing: 0.03em;
+  padding: 6px 22px;
+}
+
+.portfolio-list {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  border-bottom: 1px solid #eeeeee;
 }
 
 .portfolio-btn:focus,
 .portfolio-btn:hover {
   background-color: var(--accent-color);
   color: var(--white-color);
+}
+
+.portfolio-contant {
+  margin-right: 24px;
+  margin-left: 24px;
 }
 
 .portfolio-title {
