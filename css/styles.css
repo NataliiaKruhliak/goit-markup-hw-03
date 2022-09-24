@@ -12,6 +12,8 @@
   --btn-active: #188ce8;
   --main-font-weight: 400;
   --second-font-weight: 700;
+  --padding-section: 94px;
+  --image-gap: 30px;
 }
 
 p,
@@ -40,8 +42,9 @@ address {
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -96,8 +99,8 @@ body {
 }
 
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: var(--padding-section);
+  padding-bottom: var(--padding-section);
 }
 
 .section.no-top-padding {
@@ -216,6 +219,8 @@ body {
   width: 696px;
   margin-bottom: 30px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .top-btn {
@@ -226,12 +231,13 @@ body {
   font-size: 16px;
   line-height: 1.87;
   min-width: 216px;
-  height: 50px;
   display: flex;
   text-align: center;
   letter-spacing: 0.06em;
   padding: 10px 32px;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .top-btn:focus,
@@ -276,8 +282,17 @@ body {
 }
 
 .direction-list {
+  padding: 0;
+  margin: 0;
   display: flex;
-  gap: 30px;
+  /* Фіксована (при видаленні img не втрачається ширина) сітка для елементів li, замість gap*/
+  margin-left: calc(-1 * var(--image-gap));
+  margin-top: calc(-1 * var(--image-gap));
+}
+.direction-item {
+  flex-basis: calc(100% / 3 - var(--image-gap));
+  margin-left: var(--image-gap);
+  margin-top: var(--image-gap);
 }
 
 /* ----------------------------------section team------------------------------- */
@@ -287,17 +302,24 @@ body {
 }
 
 .team-list {
+  padding: 0;
+  margin: 0;
   display: flex;
-  gap: 30px;
-}
-
-.team-contant {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  /* Фіксована (при видаленні img не втрачається ширина) сітка для елементів li, замість gap*/
+  margin-left: calc(-1 * var(--image-gap));
+  margin-top: calc(-1 * var(--image-gap));
 }
 
 .team-item {
   background-color: var(--white-color);
+  flex-basis: calc(100% / 3 - var(--image-gap));
+  margin-left: var(--image-gap);
+  margin-top: var(--image-gap);
+}
+
+.team-contant {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .team-title {
@@ -327,11 +349,6 @@ body {
   gap: 8px;
 }
 
-.portfolio-contant {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 .portfolio-btn.first {
   padding: 6px 25px;
 }
@@ -348,25 +365,30 @@ body {
   padding: 6px 22px;
 }
 
-.portfolio-list {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.portfolio-item {
-  border-bottom: 1px solid #eeeeee;
-}
-
 .portfolio-btn:focus,
 .portfolio-btn:hover {
   background-color: var(--accent-color);
   color: var(--white-color);
 }
 
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* Фіксована (при видаленні img не втрачається ширина) сітка для елементів li, замість gap*/
+  margin-left: calc(-1 * var(--image-gap));
+  margin-top: calc(-1 * var(--image-gap));
+}
+
+.portfolio-item {
+  border-bottom: 1px solid #eeeeee;
+  flex-basis: calc(100% / 3 - var(--image-gap));
+  margin-left: var(--image-gap);
+  margin-top: var(--image-gap);
+}
+
 .portfolio-contant {
-  margin-right: 24px;
-  margin-left: 24px;
+  padding: 20px 24px;
+  min-width: 322px;
 }
 
 .portfolio-title {
