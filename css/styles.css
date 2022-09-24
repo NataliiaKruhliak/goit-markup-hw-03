@@ -315,6 +315,7 @@ body {
   flex-basis: calc(100% / 3 - var(--image-gap));
   margin-left: var(--image-gap);
   margin-top: var(--image-gap);
+  border-radius: 4px;
 }
 
 .team-contant {
